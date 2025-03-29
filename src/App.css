@@ -177,6 +177,13 @@ h6 {
   font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+  .square {
+    min-width: 50px;
+    min-height: 50px;
+  }
+}
+
 .status {
   background: green;
   padding: 5px;
@@ -199,9 +206,17 @@ h6 {
 
 .game-info {
   position: fixed;
-  left: 25%;
+  left: 10%;
   top: 50%;
-  transform: translate(-25%, -50%);
+  transform: translate(-10%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  .game-info {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+  }
 }
 
 body {
