@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
-
-  return <button className="square" onClick={onSquareClick}>{value}</button>;
+  return <button className={"square"} onClick={onSquareClick}>{value}</button>;
 }
 
 function Board({ xIsNext, squares, onPlay }) {
@@ -20,20 +19,20 @@ function Board({ xIsNext, squares, onPlay }) {
     onPlay(nextSquares);
   }
 
-  const winner = calculateWinner(squares);
+  let winner = calculateWinner(squares);
   let status;
   let win;
   if (winner) {
     status = "Winner: " + winner;
-    win = "status win";
+    win = "win";
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O");
-    win = "status";
+    win = "";
   }
 
   return (
     <>
-      <div className={win}>{status}</div>
+      <div className={"status " + win}>{status}</div>
       <div className="board">
 
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
